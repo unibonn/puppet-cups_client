@@ -1,0 +1,32 @@
+# /etc/cups/client.conf
+#
+# This file is managed by Puppet. DO NOT EDIT.
+
+<% allow_any_root = scope.lookupvar('::cups::client::allow_any_root') -%>
+<% if allow_any_root -%>
+AllowAnyRoot <%= allow_any_root %>
+<% end -%>
+<% allow_expired_certs = scope.lookupvar('::cups::client::allow_expired_certs') -%>
+<% if allow_expired_certs -%>
+AllowExpiredCerts <%= allow_expired_certs %>
+<% end -%>
+<% encryption = scope.lookupvar('::cups::client::encryption') -%>
+Encryption <%= encryption %>
+<% gss_service_name = scope.lookupvar('::cups::client::gss_service_name') -%>
+<% if gss_service_name -%>
+GSSServiceName <%= gss_service_name %>
+<% end -%>
+<% server_name = scope.lookupvar('::cups::client::server_name') -%>
+ServerName <%= server_name %>
+<% ssl_options = scope.lookupvar('::cups::client::ssl_options') -%>
+<% if ssl_options -%>
+SSLOptions <%= ssl_options %>
+<% end -%>
+<% user = scope.lookupvar('::cups::client::user') -%>
+<% if user -%>
+User <%= user %>
+<% end -%>
+<% validate_certs = scope.lookupvar('::cups::client::validate_certs') -%>
+<% if validate_certs -%>
+ValidateCerts <%= validate_certs %>
+<% end -%>

@@ -1,0 +1,3 @@
+class cups {
+	# empty
+}

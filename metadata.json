@@ -1,0 +1,17 @@
+{
+  "name": "unibonn-cups",
+  "version": "0.1.0",
+  "author": "unibonn",
+  "summary": "Puppet module to install and configure the CUPS printing system",
+  "license": "GPL-3.0",
+  "source": "https://github.com/unibonn/puppet-cups",
+  "project_page": "https://github.com/unibonn/puppet-cups",
+  "issues_url": "https://github.com/unibonn/puppet-cups/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
