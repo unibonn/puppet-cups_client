@@ -1,4 +1,4 @@
-# cups
+# cups_client
 
 #### Table of Contents
 
@@ -7,6 +7,8 @@
 3. [Limitations](#limitations)
 
 ## Module Description
+
+WARNING: This module is deprecated and going to be removed.
 
 The cups modules allows to install and configure the CUPS printing system. At the moment only client configuration is handled.
 
@@ -17,14 +19,14 @@ It installs CUPS client packages and sets up the /etc/cups/client.conf file.
 A minimal working example looks like this:
 
 ```puppet
-class { '::cups::client':
+class { '::cups_client::client':
     server_name         => 'cups.example.com',
 }
 ```
 
 A more complicated example is:
 ```puppet
-class { '::cups::client':
+class { '::cups_client::client':
     server_name         => 'cups.example.com',
     package_ensure      => 'latest',
     encryption          => 'Required',

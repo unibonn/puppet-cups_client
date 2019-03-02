@@ -1,4 +1,4 @@
-# == Class: cups::client
+# == Class: cups_client::client
 #
 # Puppet class to configure CUPS client.
 #
@@ -40,7 +40,7 @@
 #
 # === Examples
 #
-#  class { '::cups':
+#  class { '::cups_client':
 #    server_name => 'cups.example.com',
 #  }
 #
@@ -52,8 +52,8 @@
 #
 # Copyright 2016 University of Bonn
 #
-class cups::client (
-	$package_name		= $::cups::params::client_package_name,
+class cups_client::client (
+	$package_name		= $::cups_client::params::client_package_name,
 	$package_ensure		= 'installed',
 	$allow_any_root 	= undef,
 	$allow_expired_certs 	= undef,
@@ -63,7 +63,7 @@ class cups::client (
 	$ssl_options		= undef,
 	$user			= undef,
 	$validate_certs		= undef,
-) inherits cups::params {
+) inherits cups_client::params {
 
 	if $allow_any_root {
 		validate_re($allow_any_root, [ '^Yes$', '^No$' ])
@@ -86,7 +86,7 @@ class cups::client (
 		validate_re($validate_certs, [ '^Yes$', '^No$' ])
 	}
 
-	class { '::cups::client::install': } ->
-	class { '::cups::client::config': }
+	class { '::cups_client::client::install': } ->
+	class { '::cups_client::client::config': }
 
 }

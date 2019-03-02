@@ -1,4 +1,4 @@
-# == Class: cups::params
+# == Class: cups_client::params
 #
 # Puppet class to set parameters.
 #
@@ -12,7 +12,7 @@
 #
 # Copyright 2016 University of Bonn
 #
-class cups::params {
+class cups_client::params {
 
 	if $::osfamily != 'RedHat' and $::osfamily != 'Debian' {
 		fail('The CUPS module does not support your OS family')

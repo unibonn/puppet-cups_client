@@ -1,4 +1,4 @@
-# == Class: cups::client::install
+# == Class: cups_client::client::install
 #
 # Puppet class to install CUPS client package.
 #
@@ -12,12 +12,12 @@
 #
 # Copyright 2016 University of Bonn
 #
-class cups::client::install {
+class cups_client::client::install {
 
-	if $::cups::client::package_name {
-		if !defined(Package[$::cups::client::package_name]) {
-			package { $::cups::client::package_name:
-				ensure	=> $::cups::client::package_ensure,
+	if $::cups_client::client::package_name {
+		if !defined(Package[$::cups_client::client::package_name]) {
+			package { $::cups_client::client::package_name:
+				ensure	=> $::cups_client::client::package_ensure,
 			}
 		}
 	}

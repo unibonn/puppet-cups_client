@@ -1,3 +1,3 @@
-class cups {
+class cups_client {
 	# empty
 }

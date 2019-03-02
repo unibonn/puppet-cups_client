@@ -1,4 +1,4 @@
-# == Class: cups::client::config
+# == Class: cups_client::client::config
 #
 # Puppet class to configure CUPS client.
 #
@@ -12,16 +12,16 @@
 #
 # Copyright 2016 University of Bonn
 #
-class cups::client::config inherits cups::client {
+class cups_client::client::config inherits cups_client::client {
 
-	$confdir = dirname($::cups::params::client_conf)
+	$confdir = dirname($::cups_client::params::client_conf)
 	file { $confdir:
 		ensure		=> directory,
 		owner		=> 'root',
 		group		=> 'root',
 		mode		=> '0755',
 	}->
-	file { $::cups::params::client_conf:
+	file { $::cups_client::params::client_conf:
 		ensure		=> present,
 		owner		=> 'root',
 		group		=> 'root',
