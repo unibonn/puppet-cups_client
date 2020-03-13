@@ -18,7 +18,7 @@ class cups_client::client::config inherits cups_client::client {
 	file { $confdir:
 		ensure		=> directory,
 		owner		=> 'root',
-		group		=> 'root',
+		group		=> 'lp',
 		mode		=> '0755',
 	}->
 	file { $::cups_client::params::client_conf:
